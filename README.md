@@ -41,15 +41,11 @@ Git instalado, caso queira clonar este repositório via linha de comando.
 Instalação
 Clonar este repositório:
 
-bash
-Copiar código
 git clone https://github.com/SEU_USUARIO/todo-list-flask.git
 Se preferir, baixe o arquivo ZIP diretamente pelo GitHub e extraia em uma pasta local.
 
 Criar e ativar um ambiente virtual (opcional, mas recomendado):
 
-bash
-Copiar código
 cd todo-list-flask
 python -m venv venv
 # Ativar no Windows
@@ -58,21 +54,15 @@ venv\Scripts\activate
 source venv/bin/activate
 Instalar as dependências:
 
-bash
-Copiar código
 pip install -r requirements.txt
 Caso não exista um requirements.txt, você pode instalar manualmente com pip install flask, por exemplo.
 
 Executando a Aplicação
 Certifique-se de estar na pasta do projeto:
 
-bash
-Copiar código
 cd todo-list-flask
 Inicie a aplicação Flask:
 
-bash
-Copiar código
 python app.py
 Se você estiver com debug habilitado, a aplicação ficará acessível em
 http://127.0.0.1:5000 (ou conforme exibido no terminal).
@@ -82,8 +72,6 @@ Testar: Você pode testar os endpoints usando ferramentas como Postman, Insomnia
 Estrutura de Pastas
 Um exemplo de estrutura do projeto pode ser:
 
-arduino
-Copiar código
 todo-list-flask/
 ├── app.py
 ├── requirements.txt
@@ -100,12 +88,10 @@ A API expõe endpoints básicos para interação com as tarefas. Abaixo, seguem 
 1. Listar todas as tarefas
 Rota: GET /tasks
 Exemplo:
-bash
-Copiar código
 curl -X GET http://127.0.0.1:5000/tasks
 Resposta (JSON):
 json
-Copiar código
+
 [
   {
     "id": 1,
@@ -121,14 +107,12 @@ Copiar código
 2. Criar uma tarefa
 Rota: POST /tasks
 Exemplo:
-bash
-Copiar código
+
 curl -X POST http://127.0.0.1:5000/tasks \
      -H "Content-Type: application/json" \
      -d '{"title": "Aprender Flask"}'
 Resposta (JSON):
 json
-Copiar código
 {
   "id": 3,
   "title": "Aprender Flask",
@@ -137,12 +121,9 @@ Copiar código
 3. Obter uma tarefa específica
 Rota: GET /tasks/<int:task_id>
 Exemplo:
-bash
-Copiar código
 curl -X GET http://127.0.0.1:5000/tasks/1
 Resposta (JSON):
 json
-Copiar código
 {
   "id": 1,
   "title": "Estudar Python",
@@ -151,14 +132,11 @@ Copiar código
 4. Atualizar uma tarefa
 Rota: PUT /tasks/<int:task_id>
 Exemplo:
-bash
-Copiar código
 curl -X PUT http://127.0.0.1:5000/tasks/1 \
      -H "Content-Type: application/json" \
      -d '{"title": "Estudar Flask", "done": true}'
 Resposta (JSON):
 json
-Copiar código
 {
   "id": 1,
   "title": "Estudar Flask",
@@ -167,8 +145,6 @@ Copiar código
 5. Excluir uma tarefa
 Rota: DELETE /tasks/<int:task_id>
 Exemplo:
-bash
-Copiar código
 curl -X DELETE http://127.0.0.1:5000/tasks/1
 Resposta: 204 No Content (sem conteúdo)
 Possíveis Melhorias
